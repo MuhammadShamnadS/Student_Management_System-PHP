@@ -2,10 +2,14 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Admin Login</title>
+    <title >Admin Login</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
-<body>
-<h2>Admin Login</h2>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<body class="bg-dark text-light">
+<div class="container d-flex justify-content-center align-items-center vh-100">
+    <div class="card p-4 shadow" style="width: 400px;">
+<h2 class="text-center mb-4">Admin Login</h2>
 
 <?php 
 if(isset($_SESSION['error'])) {
@@ -15,13 +19,17 @@ if(isset($_SESSION['error'])) {
 ?>
 
 <form action="authenticate.php" method="POST">
-    <label>Username:</label><br>
-    <input type="text" name="username" required><br><br>
+                    <div class="mb-3">
+                        <label class="form-label">Username</label>
+                        <input type="text" name="username" class="form-control" required>
+                    </div>
 
-    <label>Password:</label><br>
-    <input type="password" name="password" required><br><br>
+                    <div class="mb-3">
+                        <label class="form-label">Password</label>
+                        <input type="password" name="password" class="form-control" required>
+                    </div>
 
-    <button type="submit">Login</button>
-</form>
+                    <button type="submit" class="btn btn-primary w-100">Login</button>
+                </form>
 </body>
 </html>
